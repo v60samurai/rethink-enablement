@@ -92,6 +92,6 @@ if [ "$FAILED" -eq 0 ]; then
   echo "All checks passed. You are ready for Sunday."
   exit 0
 else
-  echo "Some checks failed. See above. Slack #rethink-enablement if stuck."
+  echo "Some checks failed. See above. Fix the missing pieces before Sunday."
   exit 1
 fi

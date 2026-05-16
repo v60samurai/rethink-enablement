@@ -33,10 +33,6 @@ This repository is the pre-work kit for the Sunday session. If you have received
 
    A row of green check marks means you are ready for Sunday. Any red cross means something is missing, and the line above will tell you what to install or which command to run.
 
-## If anything breaks
-
-The Slack channel `#rethink-enablement` is open through Saturday evening at six in the evening Bangalore time, and there is a live office hours window on Saturday from ten to eleven in the morning. Drop your error message in the channel and someone will help you unblock.
-
 ---
 
 *Owned by Harshit Badiger.*
