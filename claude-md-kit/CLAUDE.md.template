@@ -1,0 +1,255 @@
+# CLAUDE.md
+
+This file goes at `~/.claude/CLAUDE.md`. Claude Code reads it at the start of every session you run. It is the single most powerful thing you can write to make Claude useful for you specifically.
+
+This template is a **spine**, not a copy of someone else's CLAUDE.md. Each section asks you a few questions. You answer them in your own words. Delete the questions when you are done. The result is a CLAUDE.md that sounds like you, not like the person who wrote this template.
+
+A good CLAUDE.md is short. Under 200 lines is healthy. Over 500 lines means you should split into multiple files (project-level CLAUDE.md per project, global at `~/.claude/CLAUDE.md`).
+
+Delete this preamble after you finish filling the file in.
+
+---
+
+## 1. Identity
+
+**Questions to answer**
+
+- What is your name and how should Claude refer to you?
+- What is your role and where do you work or build?
+- Where are you based (city, country)?
+- What is your handle on the public internet (GitHub, X, LinkedIn)?
+
+**Example answers across different people**
+
+- A PM at a startup: "Daisy Chen (@daisylogs). Senior PM at a B2B SaaS startup. NYC. Three years at the company."
+- A solo indie developer: "Marco Reyes (@marco). Indie developer. Lisbon. Currently building a productivity tool alone."
+- A designer: "Priya Iyer (@priyaiyer). Design director at a consultancy. Bangalore. Twelve years in the field."
+
+**Your answer goes here.** Three to four lines.
+
+```
+[Your name and handle]
+[Your role and where]
+[Your location]
+[Anything else Claude should know about who you are]
+```
+
+---
+
+## 2. How you want Claude to relate to you
+
+**Questions to answer**
+
+- Is Claude your peer, a junior dev you direct, a CTO who pushes back on you, or something else?
+- Who decides the what and who decides the how between you and Claude?
+- Should Claude argue with you when it disagrees, or accept your direction?
+
+**Example answers**
+
+- "Claude is my CTO. I decide what to build. Claude decides how. Push back with evidence when my plan is wrong."
+- "Claude is my pair programmer. We figure things out together. If you spot a problem, surface it before writing code."
+- "Claude is a senior engineer I am leveling up alongside. Suggest the better path, but defer to my final call."
+
+**Your answer goes here.** Two to three sentences.
+
+```
+[Your framing]
+```
+
+---
+
+## 3. Your build approach
+
+**Questions to answer**
+
+- When you build, what is the order you always follow? List the steps in your own words.
+- When do you stop and re-plan instead of pushing through?
+- When you face an ambiguous problem, what do you do first?
+
+**Example answers**
+
+- "PRD first, brand second, implementation guide third, features last. Inside each step: load context, challenge the spec, plan, build, prove."
+- "Spike first to learn. Then write the doc. Then build the real version. Never the other way around."
+- "If I have a decision to make, I write three options on paper with one-line pros and cons before I ask anyone for help."
+
+**Your answer goes here.** Five to ten lines describing your own process.
+
+```
+[Your build approach]
+```
+
+---
+
+## 4. Stack defaults
+
+**Questions to answer**
+
+- What is your primary stack? Be specific about versions when versions matter.
+- What is your preferred package manager?
+- What testing approach do you use?
+- Any tooling preferences (linter, formatter, deploy target)?
+
+**Example answer** (replace with your own)
+
+```
+Frontend: React 19, Next.js 16 App Router, Tailwind 4
+Components: shadcn/ui
+State: Zustand for client state, TanStack Query for server state
+Forms: React Hook Form plus Zod
+Backend: Next.js API routes plus Hono if I need a separate service
+Database: PostgreSQL with Drizzle for queries, Prisma for migrations
+Auth: Clerk or Lucia depending on scope
+Testing: Vitest plus Playwright
+Tooling: pnpm. Biome for lint and format. Husky and lint-staged for pre-commit.
+Deploy: Vercel
+```
+
+**Your answer goes here.** If you do not have a stack yet, leave a placeholder and fill it in as you learn.
+
+```
+[Your stack]
+```
+
+---
+
+## 5. Behavioral rules
+
+These are non-negotiable rules. Claude follows them unless you explicitly override.
+
+**The universal rules below apply to almost everyone. Keep them or delete the ones that do not fit you.**
+
+1. Build the complete thing. Do not leave scaffolds or TODOs in committed code.
+2. Make it work, then make it right, then make it fast. In that order.
+3. Validate every input. Handle every async error. Surface every empty state.
+4. Empty states and error states get as much care as the happy path.
+5. Prefer ten lines over fifty. Fewer abstractions usually beats more.
+6. One logical change per commit. Conventional commit messages.
+
+**Add three to five of your own rules.** Things you have learned the hard way. Examples:
+
+- "Never commit without running the test suite locally."
+- "When you use `any`, the line above must explain why in a comment."
+- "Every public function gets a one-line JSDoc."
+- "If a file passes 400 lines, split it before adding more."
+- "All database changes ship with a rollback plan."
+
+```
+[Your additional rules]
+```
+
+---
+
+## 6. Forbidden patterns
+
+These are patterns Claude should NEVER use without explicit override.
+
+**Questions to answer**
+
+- Which libraries have you tried and rejected?
+- Which idioms or syntax do you hate?
+- Which security or performance anti-patterns should Claude refuse to generate?
+
+**Example answers**
+
+- "No moment.js. No date-fns. Use dayjs only."
+- "No CSS-in-JS (styled-components, Emotion). Tailwind only."
+- "No `console.log` in committed code. Use a real logger."
+- "No barrel imports unless tree-shaking is verified."
+- "No em dashes. Use hyphens, colons, or commas."
+
+**Your answer goes here.** A comma-separated list works.
+
+```
+[Your forbidden patterns]
+```
+
+---
+
+## 7. Response style
+
+This is the rule that affects the most messages: how Claude talks to you.
+
+**Questions to answer**
+
+- Should responses be terse and short, or warm and explanatory?
+- Should Claude open with the answer and then explain, or build up to the answer?
+- Do you want bullet points by default, or full paragraphs?
+- How formal should the tone be?
+
+**Example answers**
+
+- "Caveman English. Drop articles. Shortest phrasing possible. No pleasantries, no preamble, no summaries unless I ask."
+- "Friendly but direct. Lead with the answer. Explain only when asked or when the answer is surprising. Bullet points for lists of three or more."
+- "Formal. Always close with what to do next. Be willing to say 'I do not know.'"
+
+**Your answer goes here.** One paragraph is enough.
+
+```
+[Your response style]
+```
+
+---
+
+## 8. Quality bar
+
+What does "good" mean for you?
+
+**Questions to answer**
+
+- What do you check before you call something done?
+- What do you refuse to ship?
+- What does a good code review or a good doc look like to you?
+
+**Universal defaults you can keep or trim**
+
+- Server-side validation at every API boundary.
+- Loading, error, and empty states for every UI surface.
+- Mobile-first responsive design unless the project is desktop-only.
+- Sanitize all user input. Parameterized queries only.
+- Rate-limit any endpoint that costs money to run.
+
+**Add anything specific to you.**
+
+```
+[Your quality bar additions]
+```
+
+---
+
+## 9. Knowledge System (optional)
+
+Some builders persist learning across sessions. If you want this, describe how.
+
+**Examples**
+
+- "Write a session journal at the end of each Claude Code session. One file per day. Path: ~/.claude/projects/{project}/memory/session_YYYY-MM-DD.md."
+- "Maintain a past-mistakes.md per project. Every bug fix gets a class-of-error entry."
+- "Decision records live in docs/decisions/. One file per significant choice."
+
+If you do not want this, delete the section.
+
+```
+[Your knowledge system or delete this section]
+```
+
+---
+
+## How to verify the file works
+
+After you fill in the spine, open Claude Code and type:
+
+```
+summarize my CLAUDE.md
+```
+
+Claude should return a summary that matches what you wrote. If it does not, the file is not loading. Check that it is at `~/.claude/CLAUDE.md` exactly.
+
+---
+
+## A note on length
+
+A good first CLAUDE.md is between 60 and 200 lines. The spine above might fill to about 150 lines when complete. If you find yourself adding more rules every week, you are doing it right. If the file passes 400 lines, split off project-specific stuff into project CLAUDE.md files and keep this one global.
+
+---
+
+*This template is a spine. Fill it in your own words. Delete this template's preamble and questions after you are done. The example file at `CLAUDE.md.example` shows what a fully filled version looks like (it is one specific person's version, not a model to copy).*

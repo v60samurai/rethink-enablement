@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rethink Enablement · Pre-work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,144,400;1,144,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: oklch(96.5% 0.018 75);
+      --paper-2: oklch(93% 0.022 75);
+      --ink: oklch(22% 0.020 30);
+      --ink-mid: oklch(45% 0.018 30);
+      --ink-low: oklch(62% 0.012 30);
+      --accent: oklch(58% 0.18 35);
+      --rule: oklch(22% 0.020 30 / 0.12);
+      --rule-strong: oklch(22% 0.020 30 / 0.24);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 72px 48px 96px;
+    }
+    .eyebrow {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--ink-low);
+    }
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.75rem, 6vw, 4.75rem);
+      line-height: 1.04;
+      margin: 14px 0 28px;
+      letter-spacing: -0.01em;
+    }
+    h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+    h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.875rem;
+      margin: 64px 0 18px;
+      border-top: 1px solid var(--rule);
+      padding-top: 36px;
+      letter-spacing: -0.005em;
+    }
+    h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.25rem;
+      margin: 28px 0 10px;
+      color: var(--accent);
+    }
+    p { margin: 0 0 14px; }
+    .lede {
+      font-size: 1.0625rem;
+      color: var(--ink-mid);
+      max-width: 60ch;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+    .checklist li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      column-gap: 14px;
+      align-items: start;
+    }
+    .checklist li::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid var(--ink-mid);
+      margin-top: 5px;
+      border-radius: 3px;
+    }
+    code, pre {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.86rem;
+    }
+    code {
+      background: var(--paper-2);
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: var(--ink);
+    }
+    pre {
+      background: var(--paper-2);
+      padding: 16px 18px;
+      border-radius: 4px;
+      border-left: 2px solid var(--rule-strong);
+      overflow-x: auto;
+      line-height: 1.55;
+      margin: 12px 0 18px;
+      color: var(--ink);
+    }
+    .verify {
+      color: var(--ink-mid);
+      font-style: italic;
+      font-size: 0.92rem;
+      margin-top: 6px;
+      display: block;
+    }
+    .verify strong {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--accent);
+      margin-right: 6px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .callout {
+      background: var(--paper-2);
+      border-left: 2px solid var(--accent);
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+    }
+    .callout strong { color: var(--ink); font-weight: 500; }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+    footer {
+      margin-top: 96px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-low);
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    @media print {
+      body { background: white; font-size: 14px; }
+      .page { padding: 24px 32px; max-width: none; }
+      h1 { font-size: 3rem; }
+      h2 { page-break-before: avoid; break-before: avoid; }
+      h3 { page-break-after: avoid; break-after: avoid; }
+      pre, .callout, .checklist li { page-break-inside: avoid; break-inside: avoid; }
+      a { color: var(--ink); text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Rethink Systems · Claude Code enablement</p>
+    <h1>Pre-work for <em>Sunday's session.</em></h1>
+    <p class="lede">Most builders who say they want to ship with AI never actually do. They install Claude Code, they watch a demo or two, and then they stare at the cursor when the moment comes to make something real. This Sunday is built for people who would rather be on the other side of that line by the time the session ends. In two hours of guided building, you will deploy two real products to two URLs of your own choosing, and you will walk away with the build loop sitting comfortably in your head, ready to use on Tuesday morning the next time you have something of your own to ship.</p>
+
+    <h2>What I will tell you about Sunday</h2>
+    <p>The session runs for two hours and splits cleanly into two halves of roughly equal weight. In the first half, which takes about fifty-five minutes including a short warm-up, I will build a real product live in front of you, going from an empty folder on my laptop to a deployed URL in about thirty-five minutes of focused work, while three subagents handle different parts of the codebase in parallel. I will narrate what is happening at each step rather than dictate every keystroke, because the lesson here is the build loop and not the typing itself. The product I am building is small enough to ship in that window, but it is the kind of thing I expect you to find yourself opening on Tuesday morning the next time you need to think out loud about a hard decision or want a second pair of eyes on something you wrote.</p>
+    <p>In the second half you build your own real product from your own empty folder, following the same loop I demonstrated. The wiring you write is identical to the wiring the person sitting next to you is writing, but the personality you put into your CLAUDE.md file is what makes your version completely different from theirs. If Daisy the PM is in the room, her product will sound like a senior PM giving feedback. If Marco the engineer is two seats over, his product will catch passive voice with a vengeance. If Priya the designer is at the back, her product will edit like a magazine art director. Fifteen people in the room will deploy fifteen distinct products from the same skeleton, and the showcase at the end of the session is the moment when we click through each other's URLs and notice how completely different they feel even though the code underneath is identical.</p>
+    <p>What I am keeping back as a surprise for the live session is the shape of those two products. I am doing this deliberately, because the value of the session lives in the loop you learn rather than in the specific artifacts we ship, and because the reveal lands better when you see it happen in front of you on Sunday than when you read about it in a doc on Thursday. If you want a hint about what is coming, the responses you get from your deployed URLs on Sunday afternoon will sound like you, and the file that makes them sound like you is the same CLAUDE.md you are about to write during the pre-work below.</p>
+
+    <h2>Pre-flight checklist</h2>
+    <p>Each item below has a verify step that lets you confirm the piece is working before you move on to the next one. The whole sequence ends with a single script that checks everything at once, and you should run that script after you finish each individual step. Going through this pre-work is non-negotiable for the session; this is not a session where you can show up unprepared and absorb the lesson by osmosis. If anything stops working or stops making sense, the Slack channel is open through Saturday evening and I will help you get unstuck personally.</p>
+
+    <h3>1. Claude Code (VS Code is primary)</h3>
+    <ul class="checklist">
+      <li>
+        <div>
+          Install the <strong>Claude Code</strong> extension from the VS Code Marketplace. Sign in with your Pro or Max Anthropic account.
+          <span class="verify"><strong>verify</strong>Open VS Code, hit <code>⌘⇧P</code>, search "Claude Code: New session." A side panel opens.</span>
+        </div>
+      </li>
+      <li>
+        <div>
+          Confirm the CLI also works: <code>claude</code> in your terminal.
+          <span class="verify"><strong>verify</strong>The Claude Code REPL launches.</span>
+        </div>
+      </li>
+    </ul>
+
+    <h3>2. Tooling</h3>
+    <ul class="checklist">
+      <li>
+        <div>
+          <strong>Node.js 20 or higher.</strong> <code>node --version</code>.
+          <span class="verify"><strong>verify</strong><code>v20.x.x</code> or above.</span>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>pnpm.</strong> Install with <code>npm i -g pnpm</code> if missing. Then <code>pnpm --version</code>.
+          <span class="verify"><strong>verify</strong><code>9.x</code> or above.</span>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>GitHub CLI.</strong> <code>gh auth status</code>.
+          <span class="verify"><strong>verify</strong>Shows you logged in to <code>github.com</code>.</span>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Vercel CLI.</strong> Install with <code>npm i -g vercel</code> if missing. Then <code>vercel whoami</code>.
+          <span class="verify"><strong>verify</strong>Prints your Vercel username.</span>
+        </div>
+      </li>
+    </ul>
+
+    <h3>3. MCPs and skills</h3>
+    <p>Inside Claude Code, install the six MCPs and the superpowers plugin:</p>
+    <pre>claude mcp add claude-mem
+claude mcp add context7
+claude mcp add stitch
+claude mcp add shadcn
+claude mcp add vercel
+claude mcp add github
+
+claude plugins add superpowers</pre>
+    <ul class="checklist">
+      <li>
+        <div>
+          <span class="verify"><strong>verify</strong><code>claude mcp list</code> shows all six. <code>claude plugins list</code> shows superpowers.</span>
+        </div>
+      </li>
+    </ul>
+
+    <h3>4. Customize your CLAUDE.md</h3>
+    <p>This is the most important step in the entire pre-work, and the one that deserves the most thought. Your CLAUDE.md is the file that tells Claude Code how you work and what you care about, and it also quietly does a second job during Sunday's session that I am keeping back as part of the surprise. The more honest and specific you make this file, the better your Sunday will go, because vague preferences produce vague behavior, while specific preferences produce a tool that feels like a genuine extension of how you think.</p>
+    <p>The kit at <code>claude-md-kit/</code> gives you two ways to build the file. Path A is the recommended one, and it works like this: you open Claude Code in a fresh session, you paste the prompt from <code>claude-md-kit/INTERVIEW.md</code>, and you answer the questions Claude asks you section by section. The whole interview takes about ten to fifteen minutes and produces a file in your own voice rather than a translation of someone else's template. Path B is for people who would rather write markdown directly: you copy the spine template into your editor and fill in each section yourself, using the walkthrough in <code>claude-md-kit/CUSTOMIZATION.md</code> for guidance on what each section is asking for. Either path is fine for the session, but the file you produce should sound nothing like mine, because the entire point is that yours is yours.</p>
+    <ul class="checklist">
+      <li>
+        <div>
+          Clone the enablement repo so you have the kit on disk:
+          <pre>git clone https://github.com/harshitbadiger/rethink-enablement</pre>
+        </div>
+      </li>
+      <li>
+        <div>
+          Use Path A or Path B from above to create your <code>~/.claude/CLAUDE.md</code>. The interview path is faster and produces a file in your own voice.
+          <span class="verify"><strong>verify</strong>Open Claude Code, type <em>summarize my CLAUDE.md</em>. The summary should match what you wrote (not what someone else wrote).</span>
+        </div>
+      </li>
+    </ul>
+
+    <h3>5. Validation script</h3>
+    <p>One command checks all of the above:</p>
+    <pre>bash rethink-enablement/session-plan/validate-prework.sh</pre>
+    <p>Expect a row of ✓ marks. Any ✗ means open Slack.</p>
+
+    <div class="callout">
+      If anything below stops working or stops making sense, the Slack channel <code>#rethink-enablement</code> is open through Saturday evening at six o'clock Bangalore time, and there is a live office-hours window on Saturday from ten to eleven in the morning. Ask anything you need to. No setup question is too basic for this channel, and the people who ask their setup questions on Saturday tend to be the same people who ship freely on Sunday.
+    </div>
+
+    <h2>One more thing before you start</h2>
+    <p>The worst-case outcome of doing everything in the pre-work above is that you arrive on Sunday with a working setup and you ship at least one real product to a real URL before the session ends. The best-case outcome is that you ship both of them, that your friends ask you on Monday morning how you did it, and that the build loop you learned during the session becomes the loop you reach for the next time you have something of your own to build on the side or at work.</p>
+    <p>The worst-case outcome of skipping the pre-work, on the other hand, is that you spend Sunday installing tools and fixing config errors while the rest of the room ships products to live URLs, and you walk out at the end of the session with the same intention to build that you walked in with. Reading about other people's URLs in the workshop chat afterwards is a worse experience than dropping your own URL in alongside theirs, and the only thing standing between you and the second experience is the twenty minutes of setup work above.</p>
+    <p>See you Sunday.</p>
+
+    <footer>
+      Rethink Systems · Claude Code enablement · Pre-work v2 · 2026-05-16 · harshitbadiger
+    </footer>
+  </main>
+</body>
+</html>
