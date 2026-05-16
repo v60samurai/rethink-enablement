@@ -178,13 +178,14 @@
 
     <h2>Pre-flight checklist</h2>
     <p>Each item below has a verify step that lets you confirm the piece is working before you move on to the next one. The whole sequence ends with a single script that checks everything at once, and you should run that script after you finish each individual step. Going through this pre-work is non-negotiable for the session; this is not a session where you can show up unprepared and absorb the lesson by osmosis.</p>
+    <p>Every step below works on both Mac and Windows, and the only thing that changes between the two is the shell you run the commands in and the modifier keys you press. On Mac, run the commands from Terminal. On Windows, run them from <strong>Git Bash</strong>, which is installed automatically when you install Git for Windows; the regular PowerShell and Command Prompt will not work for the validation script because it uses bash syntax. Keyboard shortcuts in this document are written in the Mac form, so on Windows read <code>⌘</code> as <code>Ctrl</code> and <code>⌥</code> as <code>Alt</code>.</p>
 
     <h3>1. Claude Code (VS Code is primary)</h3>
     <ul class="checklist">
       <li>
         <div>
           Install the <strong>Claude Code</strong> extension from the VS Code Marketplace. Sign in with your Pro or Max Anthropic account.
-          <span class="verify"><strong>verify</strong>Open VS Code, hit <code>⌘⇧P</code>, search "Claude Code: New session." A side panel opens.</span>
+          <span class="verify"><strong>verify</strong>Open VS Code, hit <code>⌘⇧P</code> on Mac or <code>Ctrl+Shift+P</code> on Windows, search "Claude Code: New session." A side panel opens.</span>
         </div>
       </li>
       <li>
