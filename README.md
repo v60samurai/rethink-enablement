@@ -12,7 +12,7 @@ This repository is the pre-work kit for the Sunday session. If you have received
 
 | Folder | What lives here |
 |---|---|
-| `session-plan/` | The pre-work document itself (`pre-work.html` and `pre-work.pdf`) and the validation script (`validate-prework.sh`) that confirms your machine is ready. |
+| `session-plan/` | The pre-work document itself (`pre-work.html` and `building-pre-work-rethink-systems.pdf`) and the validation script (`validate-prework.sh`) that confirms your machine is ready. |
 | `claude-md-kit/` | Everything you need to write your personal `~/.claude/CLAUDE.md` file. `INTERVIEW.md` is the interview prompt you paste into Claude Code, `CLAUDE.md.template` is the spine for the manual path, `CUSTOMIZATION.md` is the walkthrough for what each section is asking for, and `CLAUDE.md.example` is a filled-in reference so you can see the shape of a finished file. |
 
 ## What to do
@@ -23,7 +23,7 @@ This repository is the pre-work kit for the Sunday session. If you have received
    git clone https://github.com/v60samurai/rethink-enablement
    ```
 
-2. Open `session-plan/pre-work.pdf` and follow it from the top. Every step you need is in that document, including the order in which to install tools, the MCPs to register, and the two paths for writing your `CLAUDE.md` file.
+2. Open `session-plan/building-pre-work-rethink-systems.pdf` and follow it from the top. Every step you need is in that document, including the order in which to install tools, the MCPs to register, and the two paths for writing your `CLAUDE.md` file.
 
 3. When you reach the validation step, run the script from the directory just above the clone, so the path matches what the pre-work document expects:
 
