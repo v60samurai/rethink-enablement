@@ -20,7 +20,7 @@ This repository is the pre-work kit for the Sunday session. If you have received
 1. Clone this repository so you have the kit on disk.
 
    ```bash
-   git clone https://github.com/harshitbadiger/rethink-enablement
+   git clone https://github.com/v60samurai/rethink-enablement
    ```
 
 2. Open `session-plan/pre-work.pdf` and follow it from the top. Every step you need is in that document, including the order in which to install tools, the MCPs to register, and the two paths for writing your `CLAUDE.md` file.
