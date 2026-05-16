@@ -159,6 +159,7 @@
       .page { padding: 24px 32px; max-width: none; }
       h1 { font-size: 3rem; }
       h2 { page-break-before: avoid; break-before: avoid; }
+      h2.page-break-before { page-break-before: always; break-before: page; }
       h3 { page-break-after: avoid; break-after: avoid; }
       pre, .callout, .checklist li { page-break-inside: avoid; break-inside: avoid; }
       a { color: var(--ink); text-decoration: none; }
@@ -265,7 +266,7 @@ claude plugins add superpowers</pre>
     <pre>bash rethink-enablement/session-plan/validate-prework.sh</pre>
     <p>A row of green check marks means you are ready for Sunday. Any cross means the line above it tells you what is still missing, and the message points at the install command you need to run.</p>
 
-    <h2>One more thing before you start</h2>
+    <h2 class="page-break-before">One more thing before you start</h2>
     <p>The worst-case outcome of doing everything in the pre-work above is that you arrive on Sunday with a working setup and you ship at least one real product to a real URL before the session ends. The best-case outcome is that you ship both of them, that your friends ask you on Monday morning how you did it, and that the build loop you learned during the session becomes the loop you reach for the next time you have something of your own to build on the side or at work.</p>
     <p>The worst-case outcome of skipping the pre-work, on the other hand, is that you spend Sunday installing tools and fixing config errors while the rest of the room ships products to live URLs, and you walk out at the end of the session with the same intention to build that you walked in with. Reading about other people's URLs in the workshop chat afterwards is a worse experience than dropping your own URL in alongside theirs, and the only thing standing between you and the second experience is the twenty minutes of setup work above.</p>
     <p>See you Sunday.</p>
